@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="/Styles/LayoutStyle.css">
+</head>
+<body>
+    <div class="upLine">
+        <div class="title"><a asp-page ="Index">Форум</a></div>
+    </div>
+
+     <div>
+        <div class="title">@ViewBag.Title</div>
+    </div>
+   
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

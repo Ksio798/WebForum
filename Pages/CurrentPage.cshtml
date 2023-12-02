@@ -1,0 +1,33 @@
+﻿@page
+@model Web.Pages.CurrentPageModel
+@{
+	ViewBag.Title = Model.Name;
+}
+<link rel="stylesheet" href="/Styles/StyleSheet.css">
+<div class="about">
+	<h2>@Model.Description</h2>
+	<h3>Автор: @Model.UserName</h3>
+</div>
+
+
+@foreach (var item in Model.Comments)
+{
+	<div class="conteiner">
+		<div class="mainText">@item.UserName</div>
+		<div class="text">@item.CommentText</div>
+	</div>
+}		
+
+<div class="addText">
+	<div class="addTextTitle">Добавить свой комментарий</div>
+	<form method="post">
+		<ul>
+			<li><div>Введите имя</div></li>
+			<li><input type="text" name="username" required/></li>
+			<li><div>Напишите комментарий</div></li>
+			<li><textarea class="commentText" type="text" name="comment" required></textarea></li>
+			<li><input type="submit" value="Отправить"/></li>
+		</ul>
+	</form>
+
+</div>
